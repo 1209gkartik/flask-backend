@@ -37,6 +37,10 @@ def init_db():
                         FOREIGN KEY(user_id) REFERENCES users(id))''')
         conn.commit()
 
+@app.route('/')
+def home():
+    return "Welcome to the Task Management API!"
+
 @app.route('/api/register', methods=['POST'])
 def register():
     try:
